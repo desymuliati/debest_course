@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>{{ config('app.name', 'Debest Course') }}</title>
 
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -33,7 +33,7 @@
         <div class="flex items-center justify-between">
           <!-- LOGO -->
           <a href="{{ route('front.index') }}">
-            <img src="/svgs/logo.svg" alt="stream" />
+            <img src="/svgs/logo-course.svg" alt="Course Logo" />
           </a>
           <!-- RESPONSIVE NAVBAR BUTTON TOGGLER -->
           <div class="block lg:hidden">
@@ -50,11 +50,9 @@
         <div class="hidden w-full lg:block" id="navigation">
           <div class="flex flex-col items-baseline gap-4 mt-6 lg:justify-between lg:flex-row lg:items-center lg:mt-0">
             <div class="flex flex-col w-full ml-auto lg:w-auto gap-4 lg:gap-[50px] lg:items-center lg:flex-row">
-              <a href="#!" class="nav-link-item">Landing</a>
-              <a href="#!" class="nav-link-item">Catalog</a>
-              <a href="#!" class="nav-link-item">Benefits</a>
-              <a href="#!" class="nav-link-item">Stories</a>
-              <a href="#!" class="nav-link-item">Maps</a>
+              <a href="{{ route('front.index') }}" class="nav-link-item">Home</a>
+              <a href="{{ route('courses.index') }}" class="nav-link-item">Kursus</a>
+              <a href="{{ route('instructors.index') }}" class="nav-link-item">Materi</a>
             </div>
             @auth
               <div class="flex flex-col w-full ml-auto lg:w-auto lg:gap-12 lg:items-center lg:flex-row">
@@ -72,6 +70,9 @@
               <div class="flex flex-col w-full ml-auto lg:w-auto lg:gap-12 lg:items-center lg:flex-row">
                 <a href="{{ route('login') }}" class="btn-secondary">
                   Log In
+                </a>
+                <a href="{{ route('register') }}" class="btn-secondary">
+                  Register
                 </a>
               </div>
             @endauth
